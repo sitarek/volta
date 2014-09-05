@@ -1,0 +1,8 @@
+<%= link_to 'Add new event', new_event_path %>
+<br />
+<%= flash[:success] %>
+<br />
+
+<%= render partial: "event", collection: @events %>
+
+<%= render 'greetings' %>
