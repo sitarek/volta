@@ -1,3 +1,6 @@
 <p>
   <%= event.name %>
+  <%= link_to 'Edit event', edit_event_path(id: event.id) %>
+  <%= link_to 'Show event', event_path(id: event.id) %>
+  <%= link_to 'Delete event', event_path(id: event.id), method: :delete %>
 </p>
