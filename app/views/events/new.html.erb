@@ -1,10 +1,12 @@
 <%= flash[:error] %>
-<%= form_for event do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :description %>
-  <%= form.text_area :description %>
-  <%= form.submit 'Add new event' %>
+<%= form_for event do |form_field| %>
+  <%= form_field.label :name %>
+  <%= form_field.text_field :name %>
+  <%= form_field.label :description %>
+  <%= form_field.text_area :description %>
+
+  <%= form_field.submit 'Add new event' %>
+
 <% end %>
 
 <%= render 'greetings' %>

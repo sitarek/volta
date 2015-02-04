@@ -4,3 +4,9 @@
 <p>
   <%= event.description %>
 </p>
+<p>
+  <strong>KOMENTARZE:</strong>
+  <% event.comments.each do |comment| %>
+    <%= comment.content %>
+  <% end %>
+</p>

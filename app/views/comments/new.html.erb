@@ -1,0 +1,13 @@
+<%= flash[:error] %>
+<%= form_for comment do |form_field| %>
+  <%= form_field.label :content %>
+  <%= form_field.text_field :content %>
+
+  <%= form_field.label :event_id %>
+  <%= form_field.select :event_id, options_for_select(Event.all.map { |x| [x.name, x.id] }) %>
+
+  <%= form_field.submit 'Add new comment' %>
+
+<% end %>
+
+<%= render 'greetings' %>
