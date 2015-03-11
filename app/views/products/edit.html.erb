@@ -1,0 +1,10 @@
+<%= flash[:error] %>
+<%= form_for product do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+  <%= form.submit 'Edit product' %>
+<% end %>
+
+<%= render 'greetings' %>

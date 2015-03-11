@@ -1,0 +1,21 @@
+<p>
+  <%= product.name %>
+</p>
+<p>
+  <%= product.name %>
+  <%= product.description %>
+  <%= pretty_date(product.created_at) %>
+</p>
+<p>
+  <strong>KOMENTARZE:</strong>
+  <% product.comments.each do |comment| %>
+    <%= comment.content %>
+  <% end %>
+</p>
+<p>
+  <strong>NOWY KOMENTARZ:</strong>
+  <%= form_for @comment, url: product_comments_path(product_id: product.id) do |form| %>
+    <%= form.text_field :content %>
+    <%= form.submit %>
+  <% end %>
+</p>
