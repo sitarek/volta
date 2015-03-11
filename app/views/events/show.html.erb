@@ -3,10 +3,18 @@
 </p>
 <p>
   <%= event.description %>
+  <%= pretty_date(event.created_at) %>
 </p>
 <p>
   <strong>KOMENTARZE:</strong>
   <% event.comments.each do |comment| %>
     <%= comment.content %>
+  <% end %>
+</p>
+<p>
+  <strong>NOWY KOMENTARZ:</strong>
+  <%= form_for @comment, url: event_comments_path(event_id: event.id) do |form| %>
+    <%= form.text_field :content %>
+    <%= form.submit %>
   <% end %>
 </p>

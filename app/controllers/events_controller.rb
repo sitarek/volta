@@ -8,7 +8,10 @@ class EventsController < ApplicationController
   def new
   end
 
+  def fav; end
+
   def show
+    @comment = Comment.new
   end
 
   def edit

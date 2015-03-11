@@ -15,9 +15,10 @@ class CommentsController < ApplicationController
   end
 
   def create
+    comment.event_id = params[:event_id]
     if comment.save
       flash[:success] = "V'oila!"
-      redirect_to comments_path
+      redirect_to event_path(id: params[:event_id])
     else
       flash[:error] = 'Nie poszło nam...'
       render :new
@@ -27,7 +28,7 @@ class CommentsController < ApplicationController
   def update
     if comment.update(comment_attributes)
       flash[:success] = "V'oila!"
-      redirect_to comments_path
+      redirect_to root_path
     else
       flash[:error] = 'Nie poszło nam...'
       render :edit
@@ -37,10 +38,10 @@ class CommentsController < ApplicationController
   def destroy
     if comment.destroy
       flash[:success] = "V'oila!"
-      redirect_to comments_path
+      redirect_to root_path
     else
       flash[:success] = "Nie poszło nam.."
-      redirect_to comments_path
+      redirect_to root_path
     end
   end
 
